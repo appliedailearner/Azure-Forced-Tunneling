@@ -1,3 +1,13 @@
+terraform {
+  required_version = ">= 1.5.0"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
 }
@@ -24,9 +34,9 @@ resource "azurerm_subnet" "fw_data_subnet" {
   address_prefixes     = var.fw_data_subnet_prefix
 }
 
-# Management Plane Subnet for Azure Firewall
+# Management Plane Subnet for Azure Firewall (Must be /26 or larger)
 resource "azurerm_subnet" "fw_mgmt_subnet" {
-  name                 = "AzureFirewallMgmtSubnet"
+  name                 = "AzureFirewallManagementSubnet"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = var.fw_mgmt_subnet_prefix
@@ -86,10 +96,11 @@ resource "azurerm_route_table" "rt_fw_data" {
   bgp_route_propagation_enabled = true
 
   route {
-    name                   = "Force-Tunnel-OnPrem"
-    address_prefix         = "0.0.0.0/0"
-    next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = var.on_prem_firewall_ip # The IP of your on-premise inspection device
+    name           = "Force-Tunnel-OnPrem"
+    address_prefix = "0.0.0.0/0"
+    next_hop_type  = "VirtualAppliance"
+    # The IP of your on-premise inspection device
+    next_hop_in_ip_address = var.on_prem_firewall_ip
   }
 }
 

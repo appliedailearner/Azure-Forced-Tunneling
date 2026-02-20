@@ -16,14 +16,10 @@ For an in-depth explanation of why compliance teams frequently get this wrong an
 
 ### Usage
 
-1. **Clone the repository.**
-2. **Review `variables.tf`** to adjust the CIDR ranges and your on-premises firewall IP address.
-3. **Deploy the infrastructure:**
-   ```bash
-   terraform init
-   terraform plan
-   terraform apply
-   ```
+## Deployment Guide
+1. `terraform init` to download the azurerm provider.
+2. `terraform plan -out=tfplan` to review the architecture and ensuring AzureFirewallManagementSubnet is mapped correctly.
+3. `terraform apply tfplan` to execute. Allow 45+ minutes for Azure Firewall provisioning.
 
 *Disclaimer: This is reference architecture provided for educational purposes. Ensure you review all route tables and IP schemes before deploying to a production environment.*
 
