@@ -26,3 +26,35 @@ For an in-depth explanation of why compliance teams frequently get this wrong an
    ```
 
 *Disclaimer: This is reference architecture provided for educational purposes. Ensure you review all route tables and IP schemes before deploying to a production environment.*
+
+## References & Further Reading
+
+### Microsoft Learn and Azure Official
+- [Forced Tunneling](https://learn.microsoft.com/en-us/azure/firewall/forced-tunneling)
+- [Management NIC](https://learn.microsoft.com/en-us/azure/firewall/management-nic)
+- [SNAT Private Range](https://learn.microsoft.com/en-us/azure/firewall/snat-private-range)
+- [Firewall FAQ](https://learn.microsoft.com/en-us/azure/firewall/firewall-faq)
+- [Firewall Known Issues](https://learn.microsoft.com/en-us/azure/firewall/firewall-known-issues)
+- [Features by SKU](https://learn.microsoft.com/en-us/azure/firewall/features-by-sku)
+- [Virtual Networks UDR Overview](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview)
+- [Manage Route Table](https://learn.microsoft.com/en-us/azure/virtual-network/manage-route-table)
+- [Service Tags Overview](https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview)
+- [Firewall Service Tags](https://learn.microsoft.com/en-us/azure/firewall/service-tags)
+- [Create Route Table Tutorial](https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table)
+- [Virtual Network Service Endpoints Overview](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview)
+- [Deploy Firewall in Portal](https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal)
+
+### Microsoft Troubleshooting (KMS and forced tunneling)
+- [Custom Routes Enable KMS Activation](https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/custom-routes-enable-kms-activation)
+- [Windows Activation Stopped Working](https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/windows-activation-stopped-working)
+
+### Microsoft Architecture Center (patterns)
+- [Firewall + Application Gateway](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/gateway/firewall-application-gateway)
+- [Application Gateway before Azure Firewall](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/gateway/application-gateway-before-azure-firewall)
+
+### TechCommunity Deep Dives
+- [Configuring Azure Firewall in Forced Tunneling Mode](https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/configuring-azure-firewall-in-forced-tunneling-mode/3581955)
+- [Azure Firewall NAT Behaviors](https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/azure-firewall-nat-behaviors/3825834)
+
+### Historical Context
+- [Forced Tunneling GA Announcement](https://azure.microsoft.com/en-us/blog/azure-firewall-forced-tunneling-and-sql-fqdn-filtering-now-generally-available/)
