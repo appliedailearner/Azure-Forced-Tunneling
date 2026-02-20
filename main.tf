@@ -83,7 +83,7 @@ resource "azurerm_route_table" "rt_fw_data" {
   name                          = "rt-afw-data-001"
   location                      = azurerm_resource_group.rg.location
   resource_group_name           = azurerm_resource_group.rg.name
-  disable_bgp_route_propagation = false
+  bgp_route_propagation_enabled = true
 
   route {
     name                   = "Force-Tunnel-OnPrem"
@@ -104,7 +104,7 @@ resource "azurerm_route_table" "rt_fw_mgmt" {
   name                          = "rt-afw-mgmt-001"
   location                      = azurerm_resource_group.rg.location
   resource_group_name           = azurerm_resource_group.rg.name
-  disable_bgp_route_propagation = false
+  bgp_route_propagation_enabled = true
 
   route {
     name           = "Direct-Internet-Mgmt"
